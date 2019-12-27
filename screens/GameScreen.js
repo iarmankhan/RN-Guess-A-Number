@@ -19,10 +19,10 @@ const GameScreen = props => {
     const [currentGuess, setCurrentGuess] = useState(generateRandomBetween(1, 100, props.userChoice));
 
     return (
-        <View>
+        <View style={styles.screen}>
             <Text>Opponent's Guess</Text>
             <NumberContainer>{currentGuess}</NumberContainer>
-            <Card>
+            <Card style={styles.buttonContainer}>
                 <Button onPress={() => {}} title="LOWER" />
                 <Button onPress={() => {}} title="GREATER" />
             </Card>
@@ -35,6 +35,13 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 10,
         alignItems: 'center'
+    },
+    buttonContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        marginTop: 20,
+        width: 300,
+        maxWidth: '80%'
     }
 });
 
