@@ -1,14 +1,17 @@
 import React from "react";
-import {View, Text, StyleSheet} from "react-native";
+import {View, Text, StyleSheet, Button} from "react-native";
 
-import NumberContainer from "../components/NumberContainer";
 import Card from "../components/Card";
 
 const GameOverScreen = props => {
     return (
         <View style={styles.screen}>
-            <Text>Game is Over!</Text>
-            <NumberContainer>{props.rounds}</NumberContainer>
+            <Card>
+                <Text>Game is Over!</Text>
+                <Text>Number of rounds: {props.rounds}</Text>
+                <Text>Number was : {props.userNumber}</Text>
+                <Button title="NEW GAME" onPress={props.onRestart} />
+            </Card>
         </View>
     )
 };
