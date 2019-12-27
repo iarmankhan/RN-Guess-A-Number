@@ -21,6 +21,10 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    card: {
+        width: '70%',
+        padding: 10
     }
 });
 
