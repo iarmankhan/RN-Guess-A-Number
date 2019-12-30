@@ -1,17 +1,27 @@
 import React from "react";
-import {View, Text, StyleSheet, Button} from "react-native";
+import {View, Text, StyleSheet, Button, Image} from "react-native";
 
-import Card from "../components/Card";
+import BodyText from "../components/BodyText";
+import TitleText from "../components/TitleText";
+import Color from "../constants/colors";
+
 
 const GameOverScreen = props => {
     return (
         <View style={styles.screen}>
-            <Card>
-                <Text>Game is Over!</Text>
-                <Text>Number of rounds: {props.rounds}</Text>
-                <Text>Number was : {props.userNumber}</Text>
+            <TitleText style={{ fontSize: 23 }}>The Game is Over!</TitleText>
+            <View style={styles.imageContainer}>
+                <Image source={require('../assets/success.png')} style={styles.image}/>
+                {/*<Image source={{uri: 'https://image.freepik.com/free-vector/explorer-with-backpack-background_23-2148159527.jpg'}} style={styles.image}/>*/}
+            </View>
+            <View style={styles.infoContainer}>
+                <BodyText style={styles.resultText}>
+                    Your phone needed <Text style={styles.highlight}>{props.rounds}</Text> rounds to guess the number <Text style={styles.highlight}>{props.userNumber}</Text>
+                </BodyText>
+                <View style={styles.buttonContainer}>
                 <Button title="NEW GAME" onPress={props.onRestart} />
-            </Card>
+                </View>
+            </View>
         </View>
     )
 };
@@ -22,9 +32,36 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
-    card: {
-        width: '70%',
-        padding: 10
+    imageContainer: {
+        width: 300,
+        height: 300,
+        borderRadius: 150,
+        borderWidth: 3,
+        borderColor: 'black',
+        overflow: 'hidden',
+        marginVertical: 30
+    },
+    image: {
+        width: '100%',
+        height: '100%'
+    },
+    infoContainer: {
+        marginHorizontal: 30,
+        marginVertical: 30,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    resultText: {
+        textAlign: 'center',
+        fontSize: 20
+    },
+    highlight: {
+        color: Color.primary,
+        fontFamily: 'open-sans-bold'
+    },
+    buttonContainer: {
+        marginTop: 10,
+        width: '50%'
     }
 });
 
