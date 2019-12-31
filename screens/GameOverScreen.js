@@ -13,7 +13,7 @@ const GameOverScreen = props => {
 
     useEffect(() => {
         const updateLayout = () => {
-            setAvailableDeviceHeight(Dimensions.get('window').width);
+            setAvailableDeviceWidth(Dimensions.get('window').width);
             setAvailableDeviceHeight(Dimensions.get('window').height);
         };
 
@@ -43,7 +43,7 @@ const GameOverScreen = props => {
                     <BodyText style={‌{...styles.resultText, ...{
                         fontSize: availableDeviceHeight < 400 ? 16 : 20}}}>
                         Your phone needed{' '}
-                        <Text style={styles.highlight}>{props.roundsNumber}</Text> rounds to guess the number{' '}
+                        <Text style={styles.highlight}>{props.rounds}</Text> rounds to guess the number{' '}
                         <Text style={styles.highlight}>{props.userNumber}</Text>
                     </BodyText>
                     <View style={styles.buttonContainer}>
