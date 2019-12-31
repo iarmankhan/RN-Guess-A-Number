@@ -28,23 +28,25 @@ const GameOverScreen = props => {
         <ScrollView>
             <View style={styles.screen}>
                 <TitleText style={{fontSize: 23}}>The Game is Over!</TitleText>
-                <View style={‌{...styles.imageContainer, ...{
-                    width: availableDeviceWidth * 0.7,
-                    height: availableDeviceWidth * 0.7,
-                    borderRadius: (availableDeviceWidth * 0.7) / 2,
-                    marginVertical: availableDeviceHeight / 30
-                }}}>
+                <View style={{...styles.imageContainer,...{
+                            width: availableDeviceWidth * 0.7,
+                            height: availableDeviceWidth * 0.7,
+                            borderRadius: (availableDeviceWidth * 0.7) / 2,
+                            marginVertical: availableDeviceHeight / 30
+                        }}}>
                     <Image source={require('../assets/success.png')} style={styles.image}/>
                     {/*<Image source={{uri: 'https://image.freepik.com/free-vector/explorer-with-backpack-background_23-2148159527.jpg'}} style={styles.image}/>*/}
                 </View>
-                <View style={‌{...styles.infoContainer,
-                    ...{marginVertical: availableDeviceHeight / 60}
-                }}>
-                    <BodyText style={‌{...styles.resultText, ...{
-                        fontSize: availableDeviceHeight < 400 ? 16 : 20}}}>
-                        Your phone needed{' '}
-                        <Text style={styles.highlight}>{props.rounds}</Text> rounds to guess the number{' '}
-                        <Text style={styles.highlight}>{props.userNumber}</Text>
+            {/*    style={{‌...styles.infoContainer,...{*/}
+            {/*    marginVertical: availableDeviceHeight / 60*/}
+            {/*}}}*/}
+                <View style={{...styles.infoContainer, ...{
+                        marginVertical: availableDeviceHeight / 60
+                    }}}>
+                    <BodyText style={{...styles.resultText,...{
+                        fontSize: availableDeviceHeight < 400 ? 16 : 20
+                    }}}>
+                        Your phone needed <Text style={styles.highlight}>{props.rounds}</Text> rounds to guess the number <Text style={styles.highlight}>{props.userNumber}</Text>
                     </BodyText>
                     <View style={styles.buttonContainer}>
                         <MainButton onPress={props.onRestart}>NEW GAME</MainButton>
@@ -84,7 +86,7 @@ const styles = StyleSheet.create({
         fontFamily: 'open-sans-bold'
     },
     buttonContainer: {
-        justifyContent: 'center',
+        alignItems: 'center',
         marginTop: 10,
         width: Dimensions.get('window').width / 2
     }
