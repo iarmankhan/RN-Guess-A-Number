@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
     screen: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        paddingVertical: 10
     },
     imageContainer: {
         width: Dimensions.get('window').width * 0.7,
@@ -64,6 +65,7 @@ const styles = StyleSheet.create({
         fontFamily: 'open-sans-bold'
     },
     buttonContainer: {
+        justifyContent: 'center',
         marginTop: 10,
         width: Dimensions.get('window').width / 2
     }
